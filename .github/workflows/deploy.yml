@@ -33,7 +33,6 @@ jobs:
         run: npm run build
         env:
           BASE_PATH: /portfolio/
-          VITE_SITE_URL: https://kevu1495.github.io/portfolio
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
