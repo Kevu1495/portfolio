@@ -16,6 +16,16 @@ npm run build
 npm run preview
 ```
 
+## SEO and AI crawler setup
+
+The build adds a crawl-friendly `robots.txt`, a lightweight `llms.txt`, Person JSON-LD, social metadata, and—when configured—a canonical URL and XML sitemap. The site URL is intentionally not guessed.
+
+Before deploying, set `VITE_SITE_URL` to the final public homepage URL, for example `https://your-domain.example` (do not use that example literally). For the included GitHub Actions workflow, add a repository Actions variable named `SITE_URL` with your real homepage URL. If deploying to a project subpath, include that path in `SITE_URL` and set `BASE_PATH` to the same path, such as `/repository-name/`. Rebuild after setting it. Without `VITE_SITE_URL`, the build deliberately omits the sitemap and canonical URL rather than publishing a fake domain.
+
+The generated `robots.txt` allows normal search crawling and OpenAI's `OAI-SearchBot`, which is used for ChatGPT search discovery. `GPTBot` is disallowed by default because it controls potential model-training crawling, which is separate from search inclusion. Change that policy only if you explicitly want to allow training crawling. `llms.txt` is an optional emerging convention, not a guaranteed ranking factor.
+
+After deployment, verify the live `robots.txt`, `sitemap.xml`, canonical URL, and rendered page. Then verify the domain in Google Search Console and Bing Webmaster Tools and submit the sitemap. Search inclusion and rankings are not guaranteed.
+
 ## Deploy to GitHub Pages
 
 1. Create a GitHub repository and push this folder's contents.

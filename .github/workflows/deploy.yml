@@ -32,7 +32,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          BASE_PATH: /portfolio/
+          BASE_PATH: ${{ vars.BASE_PATH || '/' }}
+          VITE_SITE_URL: ${{ vars.SITE_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

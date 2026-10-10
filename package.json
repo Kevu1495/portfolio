@@ -3,12 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-"scripts": {
+  "scripts": {
   "dev": "vite",
   "build": "vite build && node scripts/generate-seo-assets.mjs",
   "preview": "vite preview",
   "deploy": "wrangler deploy"
-},
+  },
   "dependencies": {
     "framer-motion": "^12.6.2",
     "lucide-react": "^0.468.0",
