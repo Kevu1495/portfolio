@@ -184,26 +184,26 @@ const topics = {
 
 const experiences = [
   {
-    id: 'sde', number: '02', period: 'JUN 2025 — NOW', role: 'Associate Software Engineer', company: 'Vertoz Limited · ConnectReseller', headline: 'Building the systems behind domain operations.', description: 'Moved closer to application architecture: service boundaries, registry integrations, relational data, asynchronous workflows, and delegated account access.', skills: ['Java', 'Spring Boot', 'MySQL', 'REST / SOAP', 'Kafka', 'JWT / RBAC'], topics: ['microservices', 'domainLifecycle', 'sql', 'kafka', 'impersonation', 'featureRbac', 'registrarRouting', 'apiGateway', 'rbac', 'jwt'], bullets: [
+    id: 'sde', number: '02', period: 'AUG 2025 — PRESENT', role: 'Associate Software Engineer', company: 'Vertoz Limited · ConnectReseller', headline: 'Building the systems behind domain operations.', description: 'Moved closer to application architecture: service boundaries, registry integrations, relational data, asynchronous workflows, and delegated account access.', skills: ['Java', 'Spring Boot', 'MySQL', 'REST / SOAP', 'Kafka', 'JWT / RBAC'], topics: ['microservices', 'domainLifecycle', 'sql', 'kafka', 'impersonation', 'featureRbac', 'registrarRouting', 'apiGateway', 'rbac', 'jwt'], bullets: [
       { title: 'Monolith to microservices', text: 'Migrated a legacy Spring application to a Spring Boot microservices architecture.', topic: 'microservices', number: '01' },
-      { title: 'Domain lifecycle integrations', text: 'Built REST APIs and SOAP registry integrations for domain operations and onboarding.', topic: 'domainLifecycle', number: '02' },
-      { title: 'Data access & reporting', text: 'Normalized MySQL data and built JPA-backed list/reporting endpoints.', topic: 'sql', number: '03' },
+      { title: 'Domain operations & lifecycle', text: 'Handled nameserver/glue creation, registry checks, expiration/redemption behavior, prohibited statuses, and TLD-specific lifecycle differences.', topic: 'domainLifecycle', number: '02' },
+      { title: 'MySQL normalization & APIs', text: 'Consolidated duplicate data structures, improved relational integrity and indexing, and built consistent REST APIs with pagination and JPA.', topic: 'sql', number: '03' },
       { title: 'Async workflows', text: 'Published onboarding events for asynchronous notification processing.', topic: 'kafka', number: '04' },
       { title: 'Delegated access', text: 'Built hierarchical impersonation and replaced comma-separated role/feature checks with mapped permissions.', topic: 'impersonation', number: '05' },
       { title: 'Gateway access rules', text: 'Allowed selected public master-data endpoints without requiring a JWT.', topic: 'apiGateway', number: '06' },
       { title: 'Role and feature mapping', text: 'Introduced relational role/feature/user mappings and role-aware frontend menus.', topic: 'featureRbac', number: '07' },
-      { title: 'Registrar routing layer', text: 'Normalized provider-specific operations behind a configurable registrar integration.', topic: 'registrarRouting', number: '08' },
+      { title: 'Database-driven registrar routing', text: 'Added configurable registrar routing and normalized provider-specific request/response formats behind an EPP-shaped contract.', topic: 'registrarRouting', number: '08' },
     ]
   },
   {
-    id: 'de', number: '01', period: 'DATA ENGINEERING INTERNSHIP', role: 'Data Engineer Intern', company: 'Spoutro · Website Activity Tracker', headline: 'Learning to move and transform events at scale.', description: 'Built an ingestion-to-storage path for website activity, then worked on analytical pipelines and query performance.', skills: ['Go', 'Kafka', 'PySpark', 'HDFS', 'Vertica', 'Redis'], topics: ['pythonIngestion', 'pysparkMigration', 'pysparkOptimization', 'supersetReporting', 'goTelemetry', 'streamingTransforms', 'javaDataPipeline', 'kafka', 'redis', 'sql'], bullets: [
-      { title: 'High-concurrency ingestion', text: 'Enriched browser activity events in a Go endpoint and published them to Kafka.', topic: 'goTelemetry', number: '01' },
-      { title: 'Streaming pipeline', text: 'Fixed event-field handling across the Go producer and PySpark streaming consumer.', topic: 'streamingTransforms', number: '02' },
-      { title: 'Batch ETL & optimization', text: 'Replaced a Bash/Impala pipeline with PySpark/Vertica and reduced runtime from 90 to 10 minutes.', topic: 'pysparkOptimization', number: '03' },
-      { title: 'Java data-access pipeline', text: 'Moved aggregation from Impala to Vertica and cached frequent results in Redis.', topic: 'javaDataPipeline', number: '04' },
-      { title: 'Scheduled JSON ingestion', text: 'Read JSON from an endpoint and inserted or updated records in a database table.', topic: 'pythonIngestion', number: '05' },
-      { title: 'Batch ETL migration', text: 'Transformed date-partitioned Parquet data and loaded analytical results into Vertica.', topic: 'pysparkMigration', number: '06' },
-      { title: 'Superset analytics', text: 'Created analytical charts from Vertica datasets for reporting.', topic: 'supersetReporting', number: '07' },
+    id: 'de', number: '01', period: 'JUN 2025 — AUG 2025', role: 'Data Engineer Intern', company: 'Vertoz Limited', headline: 'From scheduled ingestion to streaming analytics.', description: 'Worked across scheduled Python ingestion, PySpark batch ETL, Vertica analytics, Go-to-Kafka event ingestion, streaming transformations, and a Java data path involving Vertica and Redis.', skills: ['Go', 'Kafka', 'PySpark', 'HDFS', 'Vertica', 'Redis'], topics: ['pythonIngestion', 'pysparkMigration', 'pysparkOptimization', 'supersetReporting', 'goTelemetry', 'streamingTransforms', 'javaDataPipeline', 'kafka', 'redis', 'sql'], bullets: [
+      { title: 'Scheduled JSON ingestion', text: 'Started with Python cron jobs that read JSON from an endpoint and appended or updated database records.', topic: 'pythonIngestion', number: '01' },
+      { title: 'Batch ETL: Impala to Vertica', text: 'Reworked a Bash-driven workflow into PySpark, transforming date-partitioned Parquet data for Vertica.', topic: 'pysparkMigration', number: '02' },
+      { title: 'Pipeline performance', text: 'Tuned the PySpark/JDBC write path, reducing a reported run from about 90 minutes to about 10.', topic: 'pysparkOptimization', number: '03' },
+      { title: 'Analytics and reporting', text: 'Built analytical charts in Superset using data from Vertica.', topic: 'supersetReporting', number: '04' },
+      { title: 'Go event ingestion', text: 'Connected browser events to a Go HTTP endpoint, enriched them with device/location context, and published to Kafka.', topic: 'goTelemetry', number: '05' },
+      { title: 'Streaming data quality', text: 'Updated the Go endpoint and PySpark stream transformations to preserve fields through to Parquet.', topic: 'streamingTransforms', number: '06' },
+      { title: 'Java data path', text: 'Retired an Impala-bound Java path and moved the relevant analytical flow to Vertica with Redis in the architecture.', topic: 'javaDataPipeline', number: '07' },
     ]
   }
 ]
@@ -286,7 +286,7 @@ function App() {
       </section>
 
       <section id="journey" className="journey-section section-wrap">
-        <div className="section-heading"><div><div className="eyebrow">THE CAREER TIMELINE <span className="eyebrow-sep">/</span> 2025—NOW</div><h2>Two chapters.<br/><em>One connected</em> mindset.</h2></div><p>Different layers of the stack, connected by the same questions: how does data move, where does work happen, and how do we make systems dependable?</p></div>
+        <div className="section-heading"><div><div className="eyebrow">THE CAREER TIMELINE <span className="eyebrow-sep">/</span> DATA → APPLICATIONS</div><h2>Follow the work.<br/><em>Understand the system.</em></h2></div><p>The progression is the story: scheduled data jobs, streaming pipelines, then the services and integrations that power domain operations. Dates are shown only where confirmed.</p></div>
         <div className="journey-grid">
           <div className="timeline-rail"><span className="rail-top">START</span><div className="rail-track"><motion.div className="rail-progress" initial={{height:0}} whileInView={{height:'100%'}} viewport={{once:true,amount:.2}} transition={{duration:1.4}}/><span className="rail-node rail-node-a">01</span><span className="rail-node rail-node-b">02</span></div><span className="rail-bottom">NOW</span></div>
           <div className="experience-list">
