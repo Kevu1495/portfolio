@@ -1,0 +1,31 @@
+# Kevin Patel — Software Engineer
+
+This file is an optional, experimental summary for AI systems. It is not a substitute for the website's crawlable HTML.
+
+Kevin Patel is a software engineer at Vertoz. His experience spans data engineering and backend application engineering.
+
+## Career
+- Data Engineer Intern at Vertoz, beginning June 2025.
+- Associate Software Engineer at Vertoz, beginning August 2025; application engineering work includes ConnectReseller.
+
+## Data engineering topics
+- Python jobs that ingest JSON from HTTP endpoints and append or update database rows.
+- Scheduled PySpark jobs that transform date-partitioned Parquet data and load Vertica.
+- PySpark/JDBC pipeline tuning, with a reported job runtime reduction from about 90 minutes to about 10 minutes.
+- Apache Superset analytics over Vertica data.
+- Go HTTP event ingestion, device/geolocation enrichment, Kafka streaming, PySpark stream transformations, and Parquet output.
+- Java data pipeline work involving Impala migration and Vertica/Redis destinations.
+
+## Backend engineering topics
+- Migration from a monolithic Spring application to Spring Boot microservices.
+- API gateway, authentication, main, product, and notification service responsibilities.
+- REST API consistency, pagination, JPA data access, MySQL normalization, and master-data cleanup.
+- Kafka-driven notification workflows.
+- Domain and nameserver lifecycle operations, JWT-based impersonation, role-based access control, and registrar integrations using normalized EPP-style requests and responses.
+
+## Profiles
+- GitHub: https://github.com/kevu1495
+- LinkedIn: https://linkedin.com/in/kevu1495
+
+## Notes
+Descriptions are based on the portfolio owner's recollection and should be read as personal experience, not a claim that every technology was used in every project. Detailed technical notes on the site include general educational explanations as well as experience-specific context.
