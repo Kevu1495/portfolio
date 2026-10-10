@@ -45,7 +45,7 @@ body{background:var(--bg);color:#292a25}
 
 /* Align the two short data-flow connectors with the cards they link. */
 .connector-one { left: 42%; top: 174px; width: 105px; transform: rotate(8deg); }
-.connector-two { left: 50%; top: 290px; width: 75px; transform: rotate(-23deg); }
+.connector-two { left: 50%; top: 258px; width: 75px; transform: rotate(-23deg); }
 @media (max-width: 640px) {
   .connector-one { left: 44%; top: 138px; width: 65px; transform: rotate(8deg); }
   .connector-two { left: 51%; top: 224px; width: 58px; transform: rotate(-23deg); }

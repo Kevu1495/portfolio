@@ -16,6 +16,23 @@ npm run build
 npm run preview
 ```
 
+
+## Prerendered HTML for crawlers
+
+The production build prerenders the React homepage into `dist/index.html` before generating SEO assets. This makes the portfolio's main text available in the initial HTML response, while the browser hydrates the same React UI for interactions.
+
+Build locally:
+
+```bash
+npm install
+npm run build
+npm run preview
+```
+
+After `npm run build`, inspect `dist/index.html` and confirm that `#root` contains the rendered homepage markup rather than an empty `<div id="root"></div>`. The build will fail if prerendering fails so a deployment does not silently revert to an empty app shell.
+
+This prerenders the homepage only. Engineering notes still open in an interactive panel and do not yet have individual canonical URLs; create dedicated routes/pages and add them to the sitemap if you want each note to be independently discoverable.
+
 ## SEO and AI crawler setup
 
 The build adds a crawl-friendly `robots.txt`, a lightweight `llms.txt`, Person JSON-LD, social metadata, and—when configured—a canonical URL and XML sitemap. The site URL is intentionally not guessed.
