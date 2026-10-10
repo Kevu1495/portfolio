@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Kevin Patel — Scroll-driven portfolio
 
 A responsive React + Vite portfolio starter with a scroll-revealed career timeline, searchable engineering notes, and a persistent right-side technical panel. On small screens, the panel fills the screen for readability.
@@ -42,3 +43,6 @@ Alternatively, install dependencies and run `npm run deploy` to publish `dist` t
 - Click outside the side panel to close it
 - Reduced-motion preference support
 - Responsive mobile layout
+=======
+# portfolio
+>>>>>>> 15b2e2d9bca39d5aed59ef5801dbd91cc56250f7
