@@ -14,12 +14,11 @@ const topics = {
     summary: 'A way to decide what an authenticated user is allowed to do, based on roles and permissions.',
     sections: [
       { title: 'The mental model', body: 'A user is assigned a role; a role grants permissions; a protected operation checks for the permission it needs. Keep authentication (who are you?) separate from authorization (what can you do?).' },
-      { title: 'A common data model', code: 'users → user_roles → roles\nroles → role_permissions → permissions', body: 'For example, a DOMAIN_READ permission may allow viewing domain records while DOMAIN_UPDATE allows changing nameservers. This is a reference model, not a claim about the exact schema used at work.' },
+      { title: 'A common data model', code: 'users → user_roles → roles\nroles → role_permissions → permissions', body: 'For example, a DOMAIN_READ permission may allow viewing domain records while DOMAIN_UPDATE allows changing nameservers. ' },
       { title: 'Request flow', steps: ['Authenticate the request and establish the caller identity.', 'Resolve effective permissions for the caller and relevant account scope.', 'Check the required permission in the backend service.', 'Apply resource-level checks so access cannot cross account boundaries.', 'Return a clear forbidden response when access is denied.'] },
       { title: 'Hierarchical accounts & impersonation', body: 'In a reseller hierarchy, authorization often needs both an action check and a scope check: can this actor perform this action on this account? Impersonation should preserve the original actor, identify the target context, restrict who can initiate it, and be auditable.' },
-      { title: 'Interview prompts', bullets: ['How would you stop one reseller from reading another reseller’s records?', 'Where should authorization live: frontend, backend, or both?', 'How would you test role inheritance and delegated access?', 'How would you audit impersonation?'] }
+      
     ],
-    note: 'Your resume says you architected a JWT-based hierarchical impersonation and RBAC framework. Confirm the actual permission model, schema, and impersonation flow from your implementation before using those details in an interview.'
   },
   jwt: {
     title: 'JSON Web Token (JWT)', eyebrow: 'SECURITY / TOKENS', tags: ['JWT', 'Claims', 'HTTP'],
@@ -32,7 +31,6 @@ const topics = {
       { title: 'Important caveats', bullets: ['A signed JWT is not automatically encrypted; its payload is readable.', 'Validate issuer, audience, expiration, and allowed algorithms.', 'A JWT does not replace server-side authorization or resource-scope checks.', 'Plan for revocation, key rotation, token expiry, and safe storage.'] },
       { title: 'Request flow', steps: ['User authenticates and receives a token.', 'Client sends Authorization: Bearer <token>.', 'API validates signature and relevant claims.', 'Application authorizes the requested operation.', 'API returns the result or denies access.'] }
     ],
-    note: 'This is a general JWT reference. The resume confirms JWT-based RBAC, but does not specify the exact claims, signing algorithm, token lifetime, or storage strategy used in your implementation.'
   },
   kafka: {
     title: 'Apache Kafka', eyebrow: 'EVENT-DRIVEN SYSTEMS', tags: ['Kafka', 'Events', 'Streaming'],
@@ -42,9 +40,8 @@ const topics = {
       { title: 'Core concepts', bullets: ['Topic — a named stream of records.', 'Partition — an ordered log that enables parallelism.', 'Offset — a consumer’s position in a partition.', 'Consumer group — consumers that divide partition assignments.', 'Replication — copies partitions for resilience.'] },
       { title: 'Why use it?', body: 'Kafka can decouple a request-serving service from slower background work. The producer publishes an event; a consumer handles notifications or other processing asynchronously. This improves isolation, but introduces operational concerns such as retries, ordering, duplicates, and lag.' },
       { title: 'Delivery and reliability', body: 'Understand at-most-once, at-least-once, and exactly-once capabilities in context. A common practical approach is idempotent consumer processing: if a record is retried, the business effect should not happen twice.' },
-      { title: 'Interview prompts', bullets: ['What happens when a consumer fails before committing its offset?', 'How does partition count affect parallelism?', 'How do you handle poison messages and retries?', 'When should an operation be synchronous instead of event-driven?'] }
+      
     ],
-    note: 'Your resume describes Kafka producer work in the Spoutro activity pipeline and Kafka-based asynchronous workflows at ConnectReseller. Add the real topic design, partition strategy, retry approach, and event examples you personally worked with.'
   },
   microservices: {
     title: 'Monolith → Microservices', eyebrow: 'BACKEND ARCHITECTURE', tags: ['Spring Boot', 'Services', 'Design'],
@@ -52,10 +49,9 @@ const topics = {
     sections: [
       { title: 'Why split a monolith?', body: 'A monolith can be simpler to deploy and reason about early on. As responsibilities grow, well-chosen service boundaries can improve ownership, isolation, and independent deployment. Splitting a system also adds network, observability, and data-consistency complexity.' },
       { title: 'Boundary first', bullets: ['Group code around business capabilities, not just technical layers.', 'Define APIs and ownership for each service.', 'Avoid shared-database coupling where practical.', 'Plan timeouts, retries, observability, and failure handling.'] },
-      { title: 'Trade-offs to explain', body: 'Discuss what was moved, why those boundaries were chosen, how services communicate, how data ownership works, and how deployment or failure isolation improved. Avoid claiming that microservices are automatically faster or cheaper.' },
-      { title: 'Interview prompts', bullets: ['Why not keep the monolith?', 'How did you choose service boundaries?', 'How do you handle a downstream service outage?', 'How would you test a workflow across services?'] }
+      
+      
     ],
-    note: 'Your resume states that you migrated a legacy Spring monolith to Spring Boot microservices. Fill in the actual service boundaries, deployment setup, and before/after trade-offs from your work.'
   },
   sql: {
     title: 'SQL performance & pagination', eyebrow: 'DATA / DATABASES', tags: ['MySQL', 'JPA', 'Queries'],
@@ -64,9 +60,8 @@ const topics = {
       { title: 'Start with the query plan', body: 'Use EXPLAIN (and the database’s available analysis tools) to inspect access paths, join order, and whether indexes are being used. Measure with representative data rather than assuming an index helps.' },
       { title: 'Common levers', bullets: ['Index columns used by selective filters and joins.', 'Select only required columns instead of loading entire entities.', 'Use projections or aggregates when the endpoint needs a summary.', 'Keep pagination deterministic with a stable sort key.', 'Watch for N+1 queries when loading relationships.'] },
       { title: 'Offset vs cursor pagination', body: 'Offset pagination is simple, but deep offsets can require the database to skip many rows and concurrent changes can shift pages. Cursor/keyset pagination uses the last seen sort key and can work better for large, changing datasets when the sort order is designed appropriately.' },
-      { title: 'Interview prompts', bullets: ['How would you investigate a slow endpoint?', 'When can a composite index help?', 'What causes an N+1 query?', 'How do you paginate a joined result without duplicates?'] }
+      
     ],
-    note: 'Your resume mentions normalized MySQL schemas, Spring Data JPA joins, projections, and aggregations. Add one real query or endpoint example and the measured impact if you have reliable numbers.'
   },
   redis: {
     title: 'Redis & caching', eyebrow: 'PERFORMANCE / CACHING', tags: ['Redis', 'Latency', 'Data access'],
@@ -74,9 +69,8 @@ const topics = {
     sections: [
       { title: 'Cache-aside pattern', steps: ['Check Redis for the key.', 'On a hit, return the cached value.', 'On a miss, fetch from the source of truth.', 'Write the result to cache with a deliberate TTL.', 'Define how updates invalidate or refresh cached data.'] },
       { title: 'Trade-offs', bullets: ['Stale data and invalidation are core design concerns.', 'Use TTLs to bound how long entries remain cached.', 'Avoid cache stampedes on popular keys.', 'Do not cache sensitive data without understanding access controls.', 'Measure hit rate and end-to-end latency.'] },
-      { title: 'Interview prompts', bullets: ['How would you choose a TTL?', 'What happens when the cache is unavailable?', 'How do you invalidate after an update?', 'When is caching not worth the complexity?'] }
+      
     ],
-    note: 'Your resume says Redis was used to cache frequent query results in a Java-based data access pipeline. Add the actual key strategy, TTL, invalidation method, and measured latency improvement if known.'
   }
 
   ,pythonIngestion: {
@@ -85,57 +79,50 @@ const topics = {
     sections: [
       { title: 'The workflow', steps: ['Call the source endpoint and handle the response.', 'Parse JSON and validate required fields and types.', 'Map the payload to the destination table schema.', 'Decide whether each record should be inserted or updated.', 'Log failures and run the job through cron.'] },
       { title: 'Questions worth documenting', bullets: ['What identified an existing record: a primary key, external ID, or composite key?', 'Was the operation an upsert or separate insert/update logic?', 'How were API failures, pagination, and malformed records handled?', 'Was the job safe to rerun without creating duplicates?'] }
-    ], note: 'Based on your recollection. Fill in the endpoint, database, matching key, and error-handling details when you remember them.'
-  },
+    ], },
   pysparkMigration: {
     title: 'Hive / Impala → Vertica pipeline', eyebrow: 'DATA ENGINEERING / ETL', tags: ['PySpark', 'Parquet', 'Vertica'],
     summary: 'Replaced a Bash-driven batch workflow that wrote to Impala with a PySpark transformation pipeline loading Vertica.',
     sections: [
       { title: 'Pipeline shape', steps: ['Read date-partitioned Parquet inputs.', 'Transform and aggregate the source data.', 'Split location values such as country, state, and city into separate columns.', 'Write the transformed dataset to Vertica.', 'Run the batch job on a cron schedule and validate the output.'] },
       { title: 'Migration considerations', bullets: ['Keep transformations consistent between the old and new pipelines.', 'Validate row counts, nulls, aggregates, and date boundaries.', 'Confirm the target schema and data types before writing.', 'Compare run time and output correctness, not performance alone.'] }
-    ], note: 'You described the previous Bash → Impala workflow and the replacement PySpark → Vertica workflow. Add the actual aggregation logic and validation checks you used.'
-  },
+    ], },
   pysparkOptimization: {
     title: 'PySpark job: 90 minutes → 10', eyebrow: 'PERFORMANCE / BATCH PROCESSING', tags: ['PySpark', 'JDBC', 'Optimization'],
     summary: 'Tuned the PySpark-to-Vertica pipeline and its JDBC write/query behavior, reducing runtime from about 1 hour 30 minutes to about 10 minutes.',
     sections: [
       { title: 'Measured outcome', body: 'Reported runtime fell from roughly 90 minutes to 10 minutes — about a 9× speed-up, or an 89% reduction in elapsed time.' },
-      { title: 'What to explain in an interview', bullets: ['Which query or write options did you change in df.write.jdbc?', 'Did you tune batchsize, partitionColumn, numPartitions, fetchsize, or the SQL itself?', 'How did you avoid too many concurrent JDBC connections?', 'How did you confirm the optimized job produced equivalent results?'] },
+      
       { title: 'Performance story', steps: ['Establish the original runtime and bottleneck.', 'Change one major variable at a time.', 'Benchmark with comparable input volume.', 'Validate output correctness and compare elapsed time.', 'Document the final configuration and its trade-offs.'] }
-    ], note: 'The 90-to-10-minute improvement comes from your recollection. The exact JDBC options are not yet specified; only include the options you actually changed.'
-  },
+    ], },
   supersetReporting: {
     title: 'Analytics in Apache Superset', eyebrow: 'DATA / REPORTING', tags: ['Vertica', 'Superset', 'Analytics'],
     summary: 'Built analytical charts in Superset using data stored in Vertica.',
     sections: [
       { title: 'From warehouse to chart', steps: ['Identify the business question and metric.', 'Query the relevant Vertica tables or views.', 'Choose chart type and dimensions that fit the question.', 'Validate totals and filters against source data.', 'Present the chart with useful labels and time ranges.'] },
       { title: 'Details to capture', bullets: ['Which metrics and dimensions did the dashboards show?', 'Were datasets based on tables, views, or SQL queries?', 'Which filters or date controls mattered to users?', 'Who used the charts and what decisions did they support?'] }
-    ], note: 'Your recollection confirms building analytical charts from Vertica in Superset. Add the specific dashboards and metrics if you can recall them.'
-  },
+    ], },
   goTelemetry: {
     title: 'Go activity ingestion service', eyebrow: 'DATA ENGINEERING / EVENT INGESTION', tags: ['Go', 'HTTP', 'Kafka'],
     summary: 'A browser event triggered a JavaScript request to a Go endpoint, which enriched activity with device and geolocation information before publishing it to Kafka.',
     sections: [
       { title: 'End-to-end flow', steps: ['Browser JavaScript captures events such as clicks and mouse movement.', 'The client sends event data to the Go endpoint.', 'The endpoint enriches the payload using the WRFL dependency for device and geolocation information.', 'The service publishes the enriched event to a Kafka topic.', 'A downstream streaming job transforms and stores the data for reporting.'] },
       { title: 'Debugging missing fields', bullets: ['Compare the browser payload, decoded request, enriched object, Kafka record, and consumer output.', 'Check JSON field names, types, optional values, and serialization behavior.', 'Verify the consumer maps newly added or renamed fields correctly.', 'Test representative event types end to end.'] }
-    ], note: 'You said some fields were not transmitting and you changed both the Go endpoint and PySpark consumer transformations. Confirm the exact fields and root cause before adding specifics.'
-  },
+    ], },
   streamingTransforms: {
     title: 'Streaming fields → Parquet', eyebrow: 'DATA ENGINEERING / STREAM PROCESSING', tags: ['Kafka', 'PySpark', 'Parquet'],
     summary: 'Updated the PySpark streaming consumer alongside the Go producer so event fields were transformed correctly before being written to Parquet.',
     sections: [
       { title: 'Why both ends mattered', body: 'When an event contract changes, the producer and consumer must agree on field names, types, nullability, and semantics. A field can be present in the incoming event yet disappear or change shape during parsing and transformation.' },
       { title: 'Debugging checklist', bullets: ['Inspect the raw Kafka record.', 'Check the streaming schema and parsing mode.', 'Trace the field through each transformation.', 'Check the final DataFrame schema before writing.', 'Read sample Parquet output and verify the field is present and correctly typed.'] }
-    ], note: 'Your work touched the Go producer and PySpark streaming transformation through to Parquet storage and reports. Add the exact field mapping once recalled.'
-  },
+    ], },
   javaDataPipeline: {
     title: 'Replacing the Impala data path', eyebrow: 'DATA ENGINEERING / JAVA', tags: ['Java', 'Vertica', 'Redis'],
     summary: 'Retired a Java data-access pipeline that stored results in Impala and redirected the analytical path to Vertica with Redis caching for frequent queries.',
     sections: [
       { title: 'The change', steps: ['Trace the existing Java pipeline and its Impala dependency.', 'Move aggregation/query work to Vertica.', 'Persist or retrieve the required analytical results through the new path.', 'Cache frequent query results in Redis.', 'Compare output correctness and query latency against the old path.'] },
       { title: 'Trade-offs', bullets: ['Keep Vertica as the analytical source of truth.', 'Define how cached results expire or become invalid.', 'Measure cache hit rate and end-to-end latency.', 'Remove old dependencies only after consumers are verified.'] }
-    ], note: 'Your resume mentions a Java data-access pipeline, Vertica aggregation, and Redis caching. Add the actual cache keys, expiry behavior, and measured latency if known.'
-  },
+    ], },
   domainLifecycle: {
     title: 'Domain lifecycle & registry operations', eyebrow: 'CONNECTRESELLER / DOMAIN SYSTEMS', tags: ['EPP', 'Registry', 'Lifecycle'],
     summary: 'Implemented domain operations across application APIs and registry integrations, including nameserver and redemption-period behavior.',
@@ -143,33 +130,29 @@ const topics = {
       { title: 'Nameserver and glue flow', steps: ['Accept nameserver records such as abc.domainname.tld from the user.', 'Validate the submitted nameserver data.', 'Check host availability with the registry.', 'Send host-create with the hostname and IP address when glue records are required.', 'Handle registry responses and reflect the operation in application state.'] },
       { title: 'Expiration and redemption', body: 'For the expiration flow you described, the system eventually sends a domain-delete operation. During the intervening period, nameservers are switched to parking nameservers. A clientUpdateProhibited status blocked the update in some cases, so your fix queried current domain info, updated registry status as needed, then changed nameservers. TLD-specific lifecycle differences also needed to be accounted for.' },
       { title: 'Important edge cases', bullets: ['Registry state and the local MySQL record can drift.', 'EPP status codes can prohibit otherwise valid operations.', 'Different TLDs can have different lifecycle rules.', 'Operations need careful sequencing and handling of registry errors.'] }
-    ], note: 'This note follows your recollection. Verify the exact registry status-removal sequence, waiting periods, and TLD rules against the implementation before presenting it as a universal flow.'
-  },
+    ], },
   impersonation: {
     title: 'Hierarchical account impersonation', eyebrow: 'CONNECTRESELLER / AUTH SERVICE', tags: ['JWT', 'Stack', 'Account hierarchy'],
     summary: 'Allowed a higher-level account to enter a lower-level account context and then return to its previous identity using a stack-based flow.',
     sections: [
       { title: 'Conceptual flow', steps: ['An authenticated user initiates impersonation of an eligible lower-level account.', 'The auth service validates the hierarchy and authorization.', 'The current identity/context is preserved on a stack.', 'A token is issued with claims representing the active impersonation context.', 'When exiting, pop the previous context and restore the prior identity.'] },
       { title: 'Security questions', bullets: ['Which claims distinguish the original actor from the current target?', 'How is the allowed parent-child relationship validated?', 'Can impersonation be nested, and what are the stack limits?', 'How are token expiry, exit, and audit events handled?', 'How are permissions re-evaluated in the target account context?'] }
-    ], note: 'You specifically recalled adding claims in the auth service and using a stack to enter a user and return to the previous context. Confirm the exact claim names and token issuance strategy.'
-  },
+    ], },
   apiGateway: {
     title: 'API gateway & public master data', eyebrow: 'CONNECTRESELLER / REQUEST ROUTING', tags: ['API Gateway', 'JWT', 'Filters'],
     summary: 'The gateway routes requests to services and includes a filter that allows selected general or master-data APIs to be called without a JWT.',
     sections: [
       { title: 'Request decision', steps: ['Receive the incoming request at the gateway.', 'Match the request against the explicitly public endpoint allowlist.', 'Allow those endpoints without requiring a JWT.', 'For protected routes, validate authentication and apply the relevant access checks.', 'Route the request to the appropriate downstream service.'] },
       { title: 'Design cautions', bullets: ['Prefer explicit allowlists over broad path exemptions.', 'Keep public master data genuinely non-sensitive.', 'Test trailing slashes, HTTP methods, and overlapping route patterns.', 'Do not confuse gateway authentication with service-level authorization.'] }
-    ], note: 'You described adding a gateway filter for selected unauthenticated master-data APIs. Confirm the exact allowlist and whether token validation and authorization were handled in separate filters.'
-  },
+    ], },
   featureRbac: {
     title: 'Feature, role & user permission model', eyebrow: 'CONNECTRESELLER / AUTHORIZATION', tags: ['RBAC', 'MySQL', 'Frontend'],
     summary: 'Replaced comma-separated roles/features and loop-based checks with a relational feature, role, and user model plus a permission mapping.',
     sections: [
       { title: 'The data model you described', code: 'features ↔ role_features ↔ roles\nusers ↔ user_roles ↔ roles', body: 'This illustrates a normalized many-to-many model. Adjust table names to the actual schema. The key change was moving away from storing comma-separated values in a column.' },
       { title: 'Authorization across the app', steps: ['Define available features/permissions.', 'Map roles to features in relational tables.', 'Assign roles to users.', 'Evaluate the requested operation against the effective permission mapping.', 'Apply the same model to frontend menu visibility while retaining backend enforcement.'] },
-      { title: 'Interview prompts', bullets: ['Why is a relational mapping better than comma-separated values?', 'How are permission changes reflected for existing sessions?', 'How do you prevent frontend visibility from becoming the only security check?', 'How would you handle account hierarchy alongside roles?'] }
-    ], note: 'You described creating feature, role, and user tables and a mapping, plus frontend menu filtering. Replace illustrative relationship names with the actual schema and explain where backend permission checks occur.'
-  },
+      
+    ], },
   registrarRouting: {
     title: 'Database-driven registrar integration', eyebrow: 'CONNECTRESELLER / INTEGRATION ARCHITECTURE', tags: ['EPP', 'REST APIs', 'Adapter pattern'],
     summary: 'Built a configurable path that routes domain operations through a registry layer to different external registrars while normalizing their differing request and response formats.',
@@ -177,8 +160,7 @@ const topics = {
       { title: 'Request path', steps: ['A client calls the platform API using the expected EPP-standard request shape.', 'A filter in the registry layer identifies the registrar route.', 'The registry service forwards the operation to the registrar microservice.', 'Configuration in the database determines which registrar adapter handles the request.', 'The adapter translates to the provider-specific request, calls the provider, and normalizes the response back to the standard contract.'] },
       { title: 'Why normalize?', body: 'External registrars can expose different fields, response shapes, and error conventions. A normalized contract keeps callers independent from provider-specific behavior and allows routing/configuration changes without redeploying the entire integration service for every configuration change.' },
       { title: 'Trade-offs & questions', bullets: ['How is provider configuration validated and versioned?', 'What happens when a provider times out or returns an unexpected response?', 'How are provider-specific capabilities represented?', 'How do you test that normalized EPP responses preserve meaningful errors?'] }
-    ], note: 'This reflects your description of a DB-driven registrar-management system and normalized EPP request/response contracts. Add the actual configuration fields and provider examples you implemented.'
-  }
+    ], }
 
 }
 
@@ -286,7 +268,7 @@ function App() {
       </section>
 
       <section id="journey" className="journey-section section-wrap">
-        <div className="section-heading"><div><div className="eyebrow">THE CAREER TIMELINE <span className="eyebrow-sep">/</span> DATA → APPLICATIONS</div><h2>Follow the work.<br/><em>Understand the system.</em></h2></div><p>The progression is the story: scheduled data jobs, streaming pipelines, then the services and integrations that power domain operations. Dates are shown only where confirmed.</p></div>
+        <div className="section-heading"><div><div className="eyebrow">THE CAREER TIMELINE <span className="eyebrow-sep">/</span> DATA → APPLICATIONS</div><h2>Follow the work.<br/><em>Understand the system.</em></h2></div></div>
         <div className="journey-grid">
           <div className="timeline-rail"><span className="rail-top">START</span><div className="rail-track"><motion.div className="rail-progress" initial={{height:0}} whileInView={{height:'100%'}} viewport={{once:true,amount:.2}} transition={{duration:1.4}}/><span className="rail-node rail-node-a">01</span><span className="rail-node rail-node-b">02</span></div><span className="rail-bottom">NOW</span></div>
           <div className="experience-list">
@@ -303,7 +285,7 @@ function App() {
       </section>
 
       <section id="notes" className="notes-section section-wrap">
-        <div className="section-heading notes-heading"><div><div className="eyebrow">PERSONAL ENGINEERING HANDBOOK</div><h2>Remember the <em>why,</em><br/>not just the what.</h2></div><div className="notes-heading-right"><p>A fast, searchable reference for the things on my resume — from a 30-second mental model to the implementation details worth revisiting before an interview.</p><button className="button button-primary" onClick={() => setSearchOpen(true)}><Search size={15}/> Search all notes <kbd>⌘ K</kbd></button></div></div>
+        <div className="section-heading notes-heading"><div><div className="eyebrow">PERSONAL ENGINEERING HANDBOOK</div><h2>Remember the <em>why,</em><br/>not just the what.</h2></div><div className="notes-heading-right"><p>Notes on the tools, systems, and engineering concepts that shape my work.</p><button className="button button-primary" onClick={() => setSearchOpen(true)}><Search size={15}/> Search all notes <kbd>⌘ K</kbd></button></div></div>
         <div className="notes-grid">{allSearchItems.map((t,i)=><motion.button key={t.id} className="note-card" onClick={() => openTopic(t.id)} initial={reduceMotion?false:{opacity:0,y:18}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.1}} transition={{duration:.45,delay:i*.05}}><div className="note-card-top"><span className="note-index">0{i+1}</span><span className="note-open"><ArrowUpRight size={17}/></span></div><span className="note-eyebrow">{t.eyebrow}</span><h3>{t.title}</h3><p>{t.summary}</p><div className="note-tags">{t.tags.map(tag=><span key={tag}>{tag}</span>)}</div></motion.button>)}</div>
       </section>
 
@@ -328,8 +310,7 @@ function TopicPanel({topic,onClose}) {
       <div className="panel-topbar"><a className="panel-brand" href="#notes" onClick={e=>e.preventDefault()}><BookOpen size={15}/> ENGINEERING NOTES</a><button className="icon-button panel-close" onClick={onClose} aria-label="Close technical notes"><X size={18}/><span>Close</span><kbd>ESC</kbd></button></div>
       <div className="panel-scroll"><div className="panel-heading"><div className="eyebrow">{topic.eyebrow}</div><h2>{topic.title}</h2><p>{topic.summary}</p><div className="note-tags">{topic.tags.map(t=><span key={t}>{t}</span>)}</div></div>
         {topic.sections.map((s,i)=><section className="panel-section" key={s.title}><div className="panel-section-title"><span>{String(i+1).padStart(2,'0')}</span><h3>{s.title}</h3></div>{s.body&&<p>{s.body}</p>}{s.diagram&&<FlowDiagram topic={topic.title} />}{s.code&&<pre className="code-block"><code>{s.code}</code><button title="Copy code" onClick={()=>navigator.clipboard?.writeText(s.code)}><FileText size={14}/></button></pre>}{s.steps&&<ol className="panel-steps">{s.steps.map((step,j)=><li key={step}><span>{String(j+1).padStart(2,'0')}</span>{step}</li>)}</ol>}{s.bullets&&<ul className="panel-bullets">{s.bullets.map(b=><li key={b}>{b}</li>)}</ul>}</section>)}
-        <div className="panel-note"><Sparkles size={16}/><div><strong>Personal implementation note</strong><p>{topic.note}</p></div></div>
-        <div className="panel-end"><span>END OF NOTE</span><button onClick={onClose}>Back to the story <ArrowRight size={14}/></button></div>
+        <div className="panel-end"><span>END</span><button onClick={onClose}>Back to the story <ArrowRight size={14}/></button></div>
       </div>
     </motion.aside>
   </motion.div>
