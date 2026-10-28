@@ -8,6 +8,10 @@
 - Current build trigger: repository `Kevu1495/portfolio`, branch `main`, build `npm run build`, deploy `npx wrangler deploy`.
 - A feature-branch push does not match the verified main-only trigger.
 
+## Pull-request previews
+
+Cloudflare separately tracks `codex/portfolio-engineering-20261027` as a Preview. Its build command must be `npm run build`, followed by `npx wrangler preview`; an empty build command leaves `dist` ungenerated. The Wrangler file includes the required empty `previews` block. This preview configuration is separate from the production trigger above.
+
 No domain or DNS changes are required merely to release these asset changes. Preserve the existing custom-domain mapping. The local Wrangler configuration retains the Worker name and compatibility date, and switches static routing from SPA fallback to `404-page` with `auto-trailing-slash`.
 
 ## Before release
