@@ -1,0 +1,590 @@
+[
+  {
+    "page": "home",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "home",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "home",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "home",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "home",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "home",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "home",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "projects",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "projects",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "projects",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "projects",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "projects",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "projects",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "projects",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/about/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/about/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/about/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/about/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/about/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/about/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/about/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/experience/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/experience/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/experience/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/experience/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/experience/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/experience/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/experience/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/skills/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/skills/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/skills/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/skills/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/skills/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/skills/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/skills/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/projects/data-pipeline-optimization/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/projects/data-pipeline-optimization/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/projects/data-pipeline-optimization/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/projects/data-pipeline-optimization/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/projects/data-pipeline-optimization/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/projects/data-pipeline-optimization/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/projects/data-pipeline-optimization/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/projects/event-ingestion-pipeline/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/projects/event-ingestion-pipeline/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/projects/event-ingestion-pipeline/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/projects/event-ingestion-pipeline/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/projects/event-ingestion-pipeline/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/projects/event-ingestion-pipeline/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/projects/event-ingestion-pipeline/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/projects/spring-boot-microservices/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/projects/spring-boot-microservices/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/projects/spring-boot-microservices/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/projects/spring-boot-microservices/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/projects/spring-boot-microservices/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/projects/spring-boot-microservices/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/projects/spring-boot-microservices/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/projects/secure-account-management/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/projects/secure-account-management/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/projects/secure-account-management/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/projects/secure-account-management/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/projects/secure-account-management/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/projects/secure-account-management/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/projects/secure-account-management/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/projects/medleaf/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/projects/medleaf/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/projects/medleaf/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/projects/medleaf/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/projects/medleaf/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/projects/medleaf/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/projects/medleaf/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/404.html",
+    "viewport": 320,
+    "clientWidth": 320,
+    "scrollWidth": 320
+  },
+  {
+    "page": "/404.html",
+    "viewport": 375,
+    "clientWidth": 375,
+    "scrollWidth": 375
+  },
+  {
+    "page": "/404.html",
+    "viewport": 430,
+    "clientWidth": 430,
+    "scrollWidth": 430
+  },
+  {
+    "page": "/404.html",
+    "viewport": 768,
+    "clientWidth": 768,
+    "scrollWidth": 768
+  },
+  {
+    "page": "/404.html",
+    "viewport": 1024,
+    "clientWidth": 1024,
+    "scrollWidth": 1024
+  },
+  {
+    "page": "/404.html",
+    "viewport": 1440,
+    "clientWidth": 1440,
+    "scrollWidth": 1440
+  },
+  {
+    "page": "/404.html",
+    "viewport": 1920,
+    "clientWidth": 1920,
+    "scrollWidth": 1920
+  },
+  {
+    "page": "/projects/registrar-integration-platform/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/projects/registrar-integration-platform/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/projects/registrar-integration-platform/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/projects/registrar-integration-platform/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/projects/registrar-integration-platform/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/projects/registrar-integration-platform/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/projects/registrar-integration-platform/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/contact/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/contact/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/contact/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/contact/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/contact/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/contact/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/contact/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  },
+  {
+    "page": "/review/architecture/",
+    "viewport": 320,
+    "clientWidth": 305,
+    "scrollWidth": 305
+  },
+  {
+    "page": "/review/architecture/",
+    "viewport": 375,
+    "clientWidth": 360,
+    "scrollWidth": 360
+  },
+  {
+    "page": "/review/architecture/",
+    "viewport": 430,
+    "clientWidth": 415,
+    "scrollWidth": 415
+  },
+  {
+    "page": "/review/architecture/",
+    "viewport": 768,
+    "clientWidth": 753,
+    "scrollWidth": 753
+  },
+  {
+    "page": "/review/architecture/",
+    "viewport": 1024,
+    "clientWidth": 1009,
+    "scrollWidth": 1009
+  },
+  {
+    "page": "/review/architecture/",
+    "viewport": 1440,
+    "clientWidth": 1425,
+    "scrollWidth": 1425
+  },
+  {
+    "page": "/review/architecture/",
+    "viewport": 1920,
+    "clientWidth": 1905,
+    "scrollWidth": 1905
+  }
+]

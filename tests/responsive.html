@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Responsive portfolio QA</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <style>
+      body {
+        margin: 0;
+        background: #555;
+        color: white;
+        font: 14px Arial;
+      }
+      header {
+        padding: 16px;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      label {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      select {
+        padding: 8px;
+      }
+      iframe {
+        display: block;
+        border: 0;
+        background: #11130f;
+      }
+      output {
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <label
+        >Viewport width<select id="width">
+          <option>320</option>
+          <option>375</option>
+          <option>430</option>
+          <option>768</option>
+          <option>1024</option>
+          <option selected>1440</option>
+          <option>1920</option>
+        </select></label
+      ><label
+        >Page<select id="route">
+          <option value="/">Home</option>
+          <option value="/projects/">Projects</option>
+          <option value="/about/">About</option>
+          <option value="/experience/">Experience</option>
+          <option value="/skills/">Skills</option>
+          <option value="/projects/data-pipeline-optimization/">Batch case</option>
+          <option value="/projects/event-ingestion-pipeline/">Event case</option>
+          <option value="/projects/spring-boot-microservices/">Services case</option>
+          <option value="/projects/secure-account-management/">Account case</option>
+          <option value="/projects/medleaf/">MedLeaf case</option>
+          <option value="/404.html">404</option>
+          <option value="/projects/registrar-integration-platform/">Case study</option>
+          <option value="/contact/">Contact</option>
+          <option value="/review/architecture/">Diagrams</option>
+        </select></label
+      ><output id="result">Ready</output>
+    </header>
+    <iframe id="preview" title="Portfolio responsive preview" src="/" width="1440" height="1050"></iframe>
+    <script>
+      const frame = document.getElementById('preview');
+      const width = document.getElementById('width');
+      const route = document.getElementById('route');
+      width.addEventListener('change', () => {
+        frame.width = width.value;
+      });
+      route.addEventListener('change', () => {
+        frame.src = route.value;
+      });
+    </script>
+  </body>
+</html>

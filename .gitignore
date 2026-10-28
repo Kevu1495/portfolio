@@ -42,3 +42,7 @@ Desktop.ini
 # Optional: local caches
 .eslintcache
 .cache/
+# Generated checks and local tooling
+.build/
+.wrangler/
+coverage/
