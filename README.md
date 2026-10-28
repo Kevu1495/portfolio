@@ -1,71 +1,61 @@
-# Kevin Patel — Scroll-driven portfolio
+# Kevin Patel — Engineering Portfolio
 
-A responsive React + Vite portfolio starter with a scroll-revealed career timeline, searchable engineering notes, and a persistent right-side technical panel. On small screens, the panel fills the screen for readability.
+A static-first React + Vite portfolio for backend and data engineering work. React composes HTML at build time; a small TypeScript module handles navigation, project filters and the engineering-focus tabs. No React runtime, backend, database or analytics script is shipped to the browser.
 
-## Run locally
+## Development
+
+Requires Node.js 22 or newer and npm.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-## Build
+Development runs in review mode with noindex metadata. In the managed preview environment, use `sites-preview start <checkout>` and open its returned URL. The local-only responsive fixture is available at `/__qa/responsive/`.
+
+## Validation and builds
 
 ```bash
+npm run check
+npm run build:review
+npm test
 npm run build
-npm run preview
+npm run deploy:check
 ```
 
+`check` runs TypeScript, ESLint, Prettier, the production build and output tests. The last production build restores deployment output after review testing. `deploy:check` performs a Wrangler dry run and does not publish.
 
-## Prerendered HTML for crawlers
+The production build generates twelve indexable routes plus `404.html`. The optional review build adds `/review/architecture/`, marks every page noindex, disallows crawling and omits the sitemap. It must never be used as a production release.
 
-The production build prerenders the React homepage into `dist/index.html` before generating SEO assets. This makes the portfolio's main text available in the initial HTML response, while the browser hydrates the same React UI for interactions.
+## Edit content
 
-Build locally:
+- `src/content/portfolio.ts`: identity, roles, education, coursework, skills and case studies.
+- `src/content/types.ts`: content contracts and publication states.
+- `src/pages/routes.ts`: route metadata.
+- `src/components/Site.tsx` and `src/pages/Pages.tsx`: shared components and page composition.
+- `src/styles.css`: design tokens, layout, typography, responsiveness and reduced-motion rules.
+- `src/client.ts`: progressive enhancements. All substantive production text is rendered without JavaScript.
+
+Project summaries, metadata, structured data and machine-readable navigation share the same content. Pending metrics are not published. Diagrams remain excluded until the owner verifies them and their status changes to `approved`.
+
+## Resume and public assets
+
+The public resume is `public/assets/kevin-patel-resume.pdf`. It is a source-derived copy with the confirmed role dates, correct employer/product attribution and only approved contact details. The uploaded original is untouched; the legacy repository-root resume is not part of `dist`.
+
+To regenerate after factual edits, install Python ReportLab and run:
 
 ```bash
-npm install
-npm run build
-npm run preview
+node scripts/export-content.mjs | python3 scripts/build-resume.py
 ```
 
-After `npm run build`, inspect `dist/index.html` and confirm that `#root` contains the rendered homepage markup rather than an empty `<div id="root"></div>`. The build will fail if prerendering fails so a deployment does not silently revert to an empty app shell.
+Render and inspect the PDF before committing it. The current public copy is one page, with selectable text and clickable professional links.
 
-This prerenders the homepage only. Engineering notes still open in an interactive panel and do not yet have individual canonical URLs; create dedicated routes/pages and add them to the sitemap if you want each note to be independently discoverable.
+Social artwork and the favicon are original SVG assets. The 1200 × 630 sharing PNG is served from `/assets/social-card.png`. Fonts are self-hosted through Fontsource packages.
 
-## SEO and AI crawler setup
+## Hosting and release
 
-The build adds a crawl-friendly `robots.txt`, a lightweight `llms.txt`, Person JSON-LD, social metadata, and—when configured—a canonical URL and XML sitemap. The site URL is intentionally not guessed.
+Read-only account checks confirmed that `kevinp.dev` routes to the existing Cloudflare Worker named `portfolio`, and HTTPS responds successfully. Its existing Workers Builds trigger watches `main`, builds this repository, and invokes Wrangler. **Merging into main publishes through that existing trigger; obtain the owner's release approval first.**
 
-Before deploying, set `VITE_SITE_URL` to the final public homepage URL, for example `https://your-domain.example` (do not use that example literally). For the included GitHub Actions workflow, add a repository Actions variable named `SITE_URL` with your real homepage URL. If deploying to a project subpath, include that path in `SITE_URL` and set `BASE_PATH` to the same path, such as `/repository-name/`. Rebuild after setting it. Without `VITE_SITE_URL`, the build deliberately omits the sitemap and canonical URL rather than publishing a fake domain.
+The proposed workflow validates pull requests and uploads build output. It no longer deploys a second copy to GitHub Pages. No Cloudflare account settings, DNS records, secrets or production deployment were changed in this task.
 
-The generated `robots.txt` allows normal search crawling and OpenAI's `OAI-SearchBot`, which is used for ChatGPT search discovery. `GPTBot` is disallowed by default because it controls potential model-training crawling, which is separate from search inclusion. Change that policy only if you explicitly want to allow training crawling. `llms.txt` is an optional emerging convention, not a guaranteed ranking factor.
-
-After deployment, verify the live `robots.txt`, `sitemap.xml`, canonical URL, and rendered page. Then verify the domain in Google Search Console and Bing Webmaster Tools and submit the sitemap. Search inclusion and rankings are not guaranteed.
-
-## Deploy to GitHub Pages
-
-1. Create a GitHub repository and push this folder's contents.
-2. In repository **Settings → Pages**, choose **GitHub Actions** as the build and deployment source.
-3. Add `.github/workflows/deploy.yml` (included in this project) and push to `main`.
-4. If the site URL is `https://USERNAME.github.io/REPOSITORY/`, set `BASE_PATH` in the workflow to `/REPOSITORY/`. If the repository is `USERNAME.github.io`, use `/`.
-
-Alternatively, install dependencies and run `npm run deploy` to publish `dist` to the `gh-pages` branch.
-
-## Personalize before publishing
-
-- Review every experience description and confirm it matches your work.
-- The RBAC, JWT, Kafka, microservices, SQL, and Redis notes contain general technical explanations. The personal implementation callouts explicitly identify where you should add verified details from your own code and architecture.
-- If you want a downloadable resume, copy your PDF into `public/resume.pdf` and add a Resume link to the hero/navigation.
-- Replace or remove any contact links you do not want public.
-- Avoid publishing private customer, production, or security implementation details.
-
-## Included interactions
-
-- Scroll-based section detection and reveal animations
-- Clickable experience bullets open relevant technical notes
-- `Ctrl/Cmd + K` opens the note search
-- `Escape` closes the active overlay/panel
-- Click outside the side panel to close it
-- Reduced-motion preference support
-- Responsive mobile layout
+See [deployment instructions](docs/DEPLOYMENT.md), the [engineering report](docs/ENGINEERING_REPORT.md), the [audit](docs/AUDIT.md) and [content review](docs/CONTENT_REVIEW.md).
